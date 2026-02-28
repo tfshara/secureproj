@@ -19,7 +19,6 @@ show_feature_importance(risk_model, feature_names)
 metrics = train_model()
 ml_behavior = analyze_ml_behaviour(metrics)
 cloud_signals = monitor_cloud()
-cloud_signals["dataset_public"] = 1   # FORCE RISK
 
 combined = {**ml_behavior, **cloud_signals}
 sample = [combined.get(feature, 0) for feature in feature_names]
