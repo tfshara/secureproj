@@ -81,3 +81,4 @@ print("Gate Accuracy:", correct / 200)
 if decision != "DEPLOY":
     print("\nSecurity Gate Failed. Blocking pipeline execution.")
     sys.exit(1)
+# trigger pipeline test
