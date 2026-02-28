@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 from training.train_model import train_model
 from monitoring.ml_behaviour import analyze_ml_behaviour
 from monitoring.cloud_monitor import monitor_cloud
@@ -76,3 +77,7 @@ print("Correct Decisions:", correct)
 print("False Negatives (Dangerous):", false_negative)
 print("False Positives:", false_positive)
 print("Gate Accuracy:", correct / 200)
+# ---------- HARD FAIL FOR PIPELINE ----------
+if decision != "DEPLOY":
+    print("\nSecurity Gate Failed. Blocking pipeline execution.")
+    sys.exit(1)
