@@ -1,5 +1,10 @@
-__pycache__/
-*.pyc
 risk_model.pkl
 deployment_audit_log.json
+__pycache__/
+*.pyc
+layer/
+package/
+deployment.zip
+layer.zip
+*.pkl
 .env
