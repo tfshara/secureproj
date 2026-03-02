@@ -68,6 +68,14 @@ def perform_canary_release():
         return "SKIPPED"
 
     print("Shifting 10% traffic to new version...")
+    print("Invoking function to generate traffic...")
+
+    for _ in range(20):
+      lambda_client.invoke(
+        FunctionName=FUNCTION_NAME,
+        Qualifier=ALIAS_NAME,
+        InvocationType="RequestResponse"
+     )
 
     lambda_client.update_alias(
         FunctionName=FUNCTION_NAME,
