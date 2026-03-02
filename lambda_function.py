@@ -39,8 +39,14 @@
 
 #     return "Done"
 
+# def lambda_handler(event, context):
+#     return {
+#         "version": context.function_version,
+#         "status": "Deployment successful"
+#     }
+
+from main_pipeline import run_pipeline
+
 def lambda_handler(event, context):
-    return {
-        "version": context.function_version,
-        "status": "Deployment successful"
-    }
+    # return run_pipeline()
+    raise Exception("Intentional Canary Failure")
