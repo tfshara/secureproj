@@ -48,5 +48,5 @@
 from main_pipeline import run_pipeline
 
 def lambda_handler(event, context):
-    # return run_pipeline()
-    raise Exception("Intentional Canary Failure")
+    return run_pipeline()
+    
